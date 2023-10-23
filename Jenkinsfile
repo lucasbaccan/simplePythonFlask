@@ -24,12 +24,12 @@ pipeline {
             steps{
                 script {
                 def sonarScannerPath = tool 'SonarScanner'
-                
+
                 sh "${sonarScannerPath}/bin/sonar-scanner \
                     -Dsonar.projectKey=courseCatalog \
                     -Dsonar.sources=. \
                     -Dsonar.host.url=http://sonarqube:9000 \
-                    -Dsonar.login=sqp_f3cc3b6bc3dcbada6d5c73bc4cf8435961130e42"
+                    -Dsonar.login=sqp_7ddb42a555d5bbff0475b959d4bbce722514e4c4"
                 }
             }
         }
