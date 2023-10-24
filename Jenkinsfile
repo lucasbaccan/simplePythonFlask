@@ -12,7 +12,7 @@ pipeline {
                 // '''
 
                 // Convert telegramSend to use curl
-                sh '''
+                sh """
                     curl -X POST \
                     https://api.telegram.org/bot6955164869:AAFGcHLUTEB5DELrxVqArjl0f0Dzc5wuBRE/sendMessage \
                     -H 'Content-Type: application/json' \
@@ -20,7 +20,7 @@ pipeline {
                         "chat_id": "-4092859996",
                         "text": "JOB: ${env.JOB_NAME} - BUILD NUMBER: ${env.BUILD_NUMBER} - SERVIDOR: ${env.JENKINS_URL} - Lucas Baccan"
                     }'
-                '''
+                """
             }
         }
 
