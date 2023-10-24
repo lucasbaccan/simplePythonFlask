@@ -5,6 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker build -t simplepythonflask .'
+
+                telegramSend "
+                    JOB: ${env.JOB_NAME} - BUILD NUMBER: ${env.BUILD_NUMBER}
+                    SERVIDOR: ${env.JENKINS_URL} - Lucas Baccan
+                "
             }
         }
 
